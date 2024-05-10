@@ -1,0 +1,16 @@
+.center {
+    display: grid;
+    place-items: center;
+}
+.d-flex {
+    display: flex;
+}
+.flex-direction-c {
+    flex-direction: column;
+}
+.jc-sb {
+    justify-content: space-between;
+}
+.black-border {
+    border: 1px solid black;
+}

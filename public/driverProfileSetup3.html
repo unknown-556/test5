@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page 3</title>
+  <link rel="stylesheet" href="driverProfileSetup3.css">
+</head>
+
+<body class="center">
+   <div class="container">
+        <div class="box">
+            <img src="Frame 220.png" alt="">
+        </div>
+
+        <div class="wrapper">
+            <div class="rectangle">
+                <div></div>
+                <div></div>
+                <div class="white"></div>
+            </div>
+            <!-- <br>
+            <p class="error-message" style="color: red;">error message</p> -->
+
+            <form  action="/post3" method="post">
+            
+                <section class="input">
+                    <label for="DailyRoute">Daily Route</label>
+                    <input type="text" class="name-input input-style" id="DailyRoute" name="DailyRoute"  required>
+                </section>
+
+                <section class="input">
+                    <label for="PriceOfTripPerPerson">Price Of Trip Per Person (We will review)
+                    </label>
+                    <input type="number" class="name-input input-style" id="PriceOfTripPerPerson" name="PriceOfTripPerPerson" required>
+                </section>
+
+                <section class="input">
+                    <label for="NameOfBank">Name Of Bank</label>
+                    <input type="text" class="name-input input-style" id="NameOfBank" name="NameOfBank" required>
+                </section>
+
+                <section class="input">
+                    <label for="BankAccountNumber">Bank Account Number</label>
+                    <input type="number" class="name-input input-style"  id="BankAccountNumber" name="BankAccountNumber"required>
+                </section>
+
+                <section class="input">
+                    <label for="AccountName">Account name</label>
+                    <input type="text" class="name-input input-style" id="AccountName" name="AccountName"  required>
+                </section>
+                <section class="date">
+                    <section>
+                        <label for="PickDayTimeForInterview">Pick A Day and Time For Interview (Online) </label>
+                        <input type="datetime-local" class="name-input input-style" class="date-time" id="PickDayTimeForInterview" name="PickDayTimeForInterview"  required><br>
+                    </section>
+                </section>
+                <button type="submit" onclick="submitFormAndNavigate()">Submit</button>
+            </form>
+            
+        </div>    
+    </div>
+    <!-- <script>
+        function submitFormAndNavigate() {
+            // Submit the form
+            document.getElementById('myForm').submit();
+            // Navigate to the next page
+            window.location.href = '/inserthtmlfilehere.html';
+        }
+    </script>        -->
+</body>
+</html>

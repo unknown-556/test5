@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
+  <link rel="stylesheet" href="./signUpPage.css">
+</head>
+<body class="center">
+  <div class="container">
+    <div class="form-heading">
+      <h2>RIDAL <br>
+        <span>Create an  account</span>
+      </h2>
+    </div>
+    <div class="form-container">
+      <form id="signup-form">
+        <div class="form-group-name">
+          <input type="text" name="firstName" id="first-name" placeholder="First name" required>
+          <input type="text" name="lastName" id="last-name" placeholder="Last name" required>
+        </div>
+        <div class="form-group-contact">
+          <input type="email" name="email" id="email" placeholder="Email: noreply@ridal.com" required>
+          <input type="tel" name="phone" id="phone" placeholder="08123456789" required>
+        </div>
+        <div class="form-goup-password">
+          <input type="password" minlength="6" name="password" id="password" placeholder="Password" required>
+          <input type="password" name="verify-password" id="verify-password" minlength="6" placeholder="Verify Password" required>
+        </div>
+        <div class="form-group-OTP center">
+          <input type="text" id="otp-input" placeholder="Enter OTP"  required style="display: none;"><!-- Add this line in your HTML where you want to display the OTP -->
+          <p id="otp-display"></p>
+          <button type="button" onclick="verifyOTP()" style="display: none;" class="otp-btn" id="verify-otp-btn">Verify OTP</button>
+        </div>
+        <div class="form-signup-btn center">
+          <button type="submit" onclick="signUp()">Sign Up</button>
+        </div>
+      </form>
+      <div class="form-termsAndCondition">
+        <p class="center">By continuing you have agreed to our <a href="#">terms & conditions</a> and our privacy policies</p>
+      </div>
+      <div class="form-orSignUpWithGoogle center">
+        <p>or signup with google</p>
+
+        <a href="#"><i class="fa-brands fa-google"><svg xmlns="http://www.w3.org/2000/svg" style="height: 25px; width: 25px" viewBox="0 0 488 512"><path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg></i></a>
+      </div>
+      <div class="alreadyHaveAnAccount center">
+        <p>Already have an account?<a href="./signInPage.html"> Login</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for displaying messages -->
+  <div id="modal" class="modal center">
+    <div class="modal-content">
+        <span class="close-button"><b>x</b></span>
+        <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+  <!-- <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+     var requiredInputs = document.querySelectorAll('input[required]');
+     for (var i = 0; i < requiredInputs.length; i++) {
+     if (requiredInputs[i].value === '') {
+      event.preventDefault(); // Prevent form submission
+      // You can also display an error message or highlight the empty fields
+      break;
+       }
+     }
+    });
+  </script> -->
+</body>
+</html>

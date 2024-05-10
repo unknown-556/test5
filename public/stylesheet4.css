@@ -1,0 +1,93 @@
+.container {
+
+    background-image: url(bg-img.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-basis: 8000px;
+    flex: 8000px;
+}
+
+.passenger {
+
+    /* width: 1000px; */
+    width: 1000px;
+    height: 49%;
+    border-bottom-left-radius: 64px;
+    border-bottom-right-radius: 64px;
+    background-color: white;
+    justify-content: start;
+    margin: 8px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffd700;
+    position: absolute;
+    margin: 3px; 
+    
+}
+
+.driver {
+
+    width: 1000px;
+    height: 49%;
+    border-top-left-radius: 64px;
+    border-top-right-radius: 64px;
+    background-color: #ffd700;
+    justify-content: end;
+    margin: -2px 0px;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    margin: 3px;
+}
+
+
+.driver {
+    transition: top 5s;
+}
+
+.passenger {
+    transition: bottom 3s;
+}
+
+.passenger {
+    top: -10000px;
+}
+.driver {
+    bottom: -10000px;
+}
+.driver, .passenger {
+    transition: 1.8678346585455885s;
+}
+
+.expanded-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    transition: all 10s;
+}
+
+.expanded {
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .passenger, .driver {
+        width: 90%;
+        max-width: 375px;
+    }
+}

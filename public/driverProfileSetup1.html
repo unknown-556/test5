@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page 1</title>
+  <link rel="stylesheet" href="driverProfileSetup1.css">
+</head>
+<body class="center">
+   <div class="container">
+        <div class="box">
+            <img src="Frame 220.png" alt="">
+        </div>
+
+        <div class="wrapper">
+            <div class="rectangle">
+                <div class="white"></div>
+                <div></div>
+                <div></div>
+            </div>
+            <form action="/post" id="myForm" method="post">
+            
+                <section class="input">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" class="name-input input-style" id="FirstName" name="FirstName" required>
+                </section>
+
+                <section class="input">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" class="name-input input-style" id="LastName" name="LastName" required>
+                </section>
+
+                <section class="input">
+                    <label for="Gender">Gender</label>
+                    <input type="text" class="name-input input-style" id="Gender" name="Gender" required>
+                </section>
+
+                <section class="input">
+                    <label for="VehicleManufacturerAndModel">Vehicle Manufacturer and Model</label>
+                    <input type="text" class="name-input input-style" id="VehicleManufacturerAndModel" name="VehicleManufacturerAndModel" required>
+                </section>
+
+                <section class="input">
+                    <label for="VehicleYear">Vehicle Year</label>
+                    <input type="text" class="name-input input-style" id="VehicleYear" name="VehicleYear"  required>
+                </section>
+
+                <section class="input">
+                    <label for="VehiclePlateNumber">Vehicle Plate No.</label>
+                    <input type="text" class="name-input input-style" id="VehiclePlateNumber" name="VehiclePlateNumber" required>
+                </section>
+
+                <section class="input">
+                    <label for="VehicleColor">Vehicle Color</label>
+                    <input type="text" class="name-input input-style" id="VehicleColor" name="VehicleColor"  required>
+                </section>
+                <button type="submit" class="button" onclick="submitFormAndNavigate()">Next</button>
+            </form>
+        </div>    
+    </div>
+    <!-- <script>
+        function submitFormAndNavigate() {
+            // Submit the form
+            document.getElementById('myForm').submit();
+            // Navigate to the next page
+            window.location.href = 'driverProfileSetup2.html';
+        }
+    </script>        -->
+</body>
+</html>

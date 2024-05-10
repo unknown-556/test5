@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page 2</title>
+  <link rel="stylesheet" href="driverProfileSetup2.css">
+</head>
+<body class="center">
+   <div class="container">
+        <div class="box">
+            <img src="Frame 220.png" alt="">
+        </div>
+
+        <div class="wrapper">
+            <div class="rectangle">
+                <div></div>
+                <div class="white"></div>
+                <div></div>
+            </div>
+
+            <form action="/post2" method="post" >
+                <section class="input">
+                    <label for="Nin">NIN</label>
+                    <input type="number" class="NIN input-style" id="Nin" name="Nin"  required>
+                </section>
+                <section class="view">
+                   <label for="FrontViewOfDriverLicense">front View Of Driver's License</label>
+                   <input type="file" class="frontview" id="FrontViewOfDriverLicense" name="FrontViewOfDriverLicense" accept="image/*" required>
+                </section>
+                <section class="view">
+                    <label for="BackViewOfDriversLicense">Back View Of Driver's License</label>
+                    <input type="file" class="backview" id="BackViewOfDriversLicense" name="BackViewOfDriversLicense" accept="image/*" required>
+                </section>
+
+                <div class="vehicle_info">
+                    <section class="vehicle_view">
+                        <label for="VehicleFrontView">Vehicle Front View</label>
+                        <input type="file" class="front_view" id="VehicleFrontView" name="VehicleFrontView" accept="image/*" required>
+                    </section>
+
+                    <section class="vehicle_view">
+                        <label for="VehicleBackView">Vehicle Back View</label>
+                        <input type="file" class="back_view" id="VehicleBackView" name="VehicleBackView" accept="image/*" required>
+                    </section>
+
+                    <section class="vehicle_view">
+                        <label for="VehicleLeftView">Vehicle Left View</label>
+                        <input type="file" class="left_view" id="VehicleLeftView," name="VehicleLeftView", accept="image/*" required>
+                    </section>
+
+                    <section class="vehicle_view">
+                        <label for="VehicleRightView">Vehicle Right View</label>
+                        <input type="file" class="right_view" id="VehicleRightView" name="VehicleRightView" accept="image/*" required>
+                    </section>
+                </div>
+                <section class="input">
+                    <label for="NumberOfSeats">Number of seats</label>
+                    <input type="number" class="number of seats-input input-style" id="NumberOfSeats" name="NumberOfSeats" required>
+                </section>
+                <button type="submit" class="button" onclick="submitFormAndNavigate()">Next</button> 
+            </form>
+        </div> 
+    </div> 
+       <!-- <script>
+        function submitFormAndNavigate() {
+            // Submit the form
+            document.getElementById('myForm').submit();
+            // Navigate to the next page
+            window.location.href = 'driverProfileSetup3.html';
+        }
+       </script> -->
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="geolocation" content="on">
+    <title>Dashboard</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="dashboard.css" />
+
+</head>
+<body>
+  <section class="profile">
+    <div class="profile-pic center">
+        <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="acct-deets">
+        <span class="firstName-container"></span>
+        <a href="#">My account</a>
+    </div>
+</section>
+
+<nav id="slide-menu">
+    <ul>
+        <li>Home</li>
+        <li>Dashboard</li>
+        <li>Profile</li>
+        <li>Settings</li>
+        <li><a href="select-user.html">Logout</a></li>
+    </ul>
+</nav>
+<!-- Content -->
+<div id="content">
+    <div id="map" class="map">
+        <div class="menu-trigger"></div>
+    </div>
+    <div class="destination-input">
+        <input type="text" id="current-location" placeholder="Current Location" />
+        <span class="material-symbols-outlined" id="pin">
+            location_on
+        </span>
+        <br />
+        <input type="text" id="destination-input" placeholder="Enter destination" />
+        <span class="material-symbols-outlined" id="target">
+            my_location
+        </span>
+        <!-- Other input elements or buttons can be added here -->
+    </div>
+
+    <!-- Location history section -->
+    <section class="location-history">
+        <div class="section-heading">
+            <h2>
+                <p class="history-tab">RIDAL <span>History</span></p>
+            </h2>
+        </div>
+
+        <!-- Content of location history here -->
+        <div class="history-container">
+
+        </div>
+    </section>
+  </div>
+
+  <!-- <div class="btbar">
+    <div class="panel">
+        
+    </div>
+    <div class="eta">Arriving in 6 mins</div>
+    <div class="loader-container">
+        <div class="loader-bar"></div>
+    </div>
+    <div class="method">Choose Payment Method</div>
+    <div class="chose">
+        <p id="cash">Pay Cash</p>
+        <p id="trans">Bank Transfer</p>
+    </div>
+</div> -->
+
+<div>delete me</div>
+
+  
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+  <script src="https://kit.fontawesome.com/f25bb9d79a.js" crossorigin="anonymous"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

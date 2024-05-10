@@ -1,0 +1,413 @@
+@import url(utility.css);
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+    * {
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background: #ffd700;
+        color: #353d46;
+        font: 18px/27px "Arial", sans-serif;
+    }
+
+    nav#slide-menu {
+        position: fixed;
+        top: 0;
+        left: -100px;
+        bottom: 0;
+        display: block;
+        float: left;
+        width: 100%;
+        max-width: 284px;
+        height: 100%;
+        transition: all 300ms;
+        margin-top: 40px;
+    }
+
+    .profile {
+        position: fixed;
+        display: flex;
+        gap: 10px;
+        margin-left: 40px;
+        margin-top: 20px;
+        transition: all 300ms;
+    }
+
+    .profile-pic {
+        border: 3px solid rgb(255, 255, 255);
+        padding: 7px;
+        border-radius: 100%;
+        background-color: #ffffff;
+        height: 30px;
+        width: 30px;
+        transition: all 300ms;
+    }
+
+    nav#slide-menu>ul {
+        display: block;
+        margin: 40px;
+        padding: 0;
+        list-style: none;
+        opacity: 0.5;
+        transition: all 300ms;
+    }
+
+    nav#slide-menu>ul li {
+        color: #000000;
+        padding: 6px 0;
+        cursor: pointer;
+    }
+
+    nav#slide-menu>ul li:hover {
+        color: #ffffff;
+    }
+
+    nav#slide-menu>ul li:before {
+        font-family: "ico";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        color: #59e9df;
+        margin-right: 12px;
+        text-align: center;
+        font-variant: normal;
+        font-size: 0.75em;
+        text-transform: none;
+        line-height: 1em;
+    }
+
+    nav#slide-menu>ul li.sep {
+        margin-top: 7px;
+        padding-top: 14px;
+        border-top: 1px solid #6b7b8d;
+    }
+
+    body.menu-active nav#slide-menu {
+        left: 0px;
+    }
+
+    body.menu-active nav#slide-menu ul {
+        left: 0px;
+        opacity: 1;
+    }
+
+    div#content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* padding: 60px; */
+        overflow: scroll;
+        background: #fcfeff;
+        border-radius: 0;
+        box-sizing: border-box;
+        box-shadow: -3px 0 6px #4a5562;
+        transition: all 300ms;
+    }
+
+    div#content div.menu-trigger {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 36px;
+        height: 36px;
+        background: #ffd700;
+        cursor: pointer;
+        border-radius: 5px;
+        -moz-transition: all 300ms;
+        -webkit-transition: all 300ms;
+        transition: all 300ms;
+        z-index: 1;
+    }
+
+    div#content div.menu-trigger:before {
+        content: "\e801";
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        color: black;
+        font-family: "ico";
+        font-style: normal;
+        font-size: 1.2em;
+        font-weight: normal;
+        font-variant: normal;
+        text-align: center;
+        text-transform: none;
+        line-height: 36px;
+    }
+
+    div#content div.menu-trigger:hover {
+        background: #556270;
+    }
+
+    div#content div.menu-trigger:hover:before {
+        color: #fcfeff;
+    }
+
+    body.menu-active div#content {
+        left: 284px;
+        border-radius: 7px 0 0 7px;
+    }
+
+    body.menu-active div#content .menu-trigger {
+        left: 294px;
+    }
+
+    #map {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* Styling for your navbar */
+    }
+
+    .destination-input {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        width: 264px;
+
+
+    }
+
+    .destination-input input[type="text"] {
+        width: calc(100% - 40px);
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 12px;
+        border-bottom: 1px solid #ffd700;
+        margin-top: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        color: #000000;
+    }
+
+    #pin {
+        position: absolute;
+        right: 24px;
+        top: 45%;
+        transform: translateY(-121%);
+        color: #292D32;
+    }
+
+    #target {
+        position: absolute;
+        right: 25px;
+        top: 45%;
+        transform: translateY(90%);
+        color: #292D32;
+    }
+
+
+    .location-history {
+        position: fixed;
+        /* Fixed positioning relative to the viewport */
+        bottom: 0;
+        /* Aligns the section to the bottom of the viewport */
+        left: 10;
+        /* Aligns the section to the left of the viewport */
+        width: 100%;
+        /* Ensures the section spans the full width of the screen */
+        background: #fff;
+        /* Set a background color so the text is readable over the map */
+        z-index: 10;
+        /* Ensures the section stays above the map */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Optional: adds a shadow for better separation */
+        /* Add padding, border, or other styles as needed */
+        height: 300px;
+        border-top-left-radius: 38px;
+        /* Adjust the border radius as needed */
+        border-top-right-radius: 38px;
+    }
+
+    #locate-btn {
+        position: relative;
+        top: -24px;
+        left: 53%;
+        text-align: center;
+        width: 10%;
+    }
+
+    /* history-section */
+
+    .section-heading h2>p {
+
+        color: #ffd700;
+    }
+
+    .section-heading h2>p>span {
+        font-weight: 500;
+        color: black;
+        font-size: large;
+    }
+
+    .section-heading {
+        margin: 10px;
+        margin-left: 20px;
+    }
+
+    .history-tab {
+        padding: 0;
+        margin: 0;
+    }
+
+    .history-container {
+        height: 224px;
+        width: 100%;
+        border: 2px solid red;
+    }
+
+    /* payment method */
+    /* .chose {
+      display: flex;
+  
+  }
+  
+  
+  .btbar {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      width: 100%;
+      height: 205px;
+      border-radius: 40px 40px 0px 0px;
+      justify-content: space-evenly;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      
+  
+  
+  }
+  
+  
+  #cash {
+      background-color: black;
+      color: #FFD700;
+      width: 160px;
+      height: 50px;
+      align-content: center;
+      cursor: pointer;
+      border-radius: 256px;
+  }
+  
+  #trans {
+      background-color: #FFD700;
+      width: 160px;
+      height: 50px;
+      align-content: center;
+      cursor: pointer;
+      border-radius: 256px;
+  
+  }
+  
+  div .chose {
+      justify-content: space-evenly;
+  
+  }
+  
+  .panel{
+      width: 100px;
+      height: 4px;
+      background: #9F9F9FC9;
+      margin: auto;
+  
+  }
+  .eta {
+      color: #19DA66;
+      margin:0 auto 0 auto;
+      font-size: 16px;
+      font-weight: 600;
+  
+  }
+  
+  .method {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      margin-top: 35px;
+  }
+  
+  p {
+      text-align: center;
+  
+  }
+  
+  .loader-container {
+      width: 100px;
+      height: 4px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin:0 auto 0 auto;
+  }
+  
+  .loader-bar {
+      height: 100%;
+      width: 0%;
+      background-color: #19DA66;
+      animation: progress 360s linear;
+  }
+  
+  @keyframes progress {
+      0% {
+          width: 0%;
+      }
+  
+      100% {
+          width: 100%;
+      }
+  } */
+    /* iphone se */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+        .destination-input {
+            width: 80%;
+        }
+
+        .destination-input input[type="text"] {
+            width: 224px;
+        }
+
+        #pin,
+        #target {
+            right: 20px;
+        }
+
+        .location-history {
+            height: 300px;
+        }
+    }
+
+    /* iPhone SE (portrait) */
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+        .destination-input {
+            width: 264px;
+        }
+
+        .destination-input input[type="text"] {
+            width: 224px;
+        }
+
+        #pin,
+        #target {
+            right: 20px;
+        }
+
+        .location-history {
+            height: 300px;
+        }
+    }
